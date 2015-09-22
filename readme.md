@@ -18,7 +18,10 @@ starling.touchProcessor = new PluggableTouchProcessor(starling.stage, new <ITouc
 ```
 ### NativeTouchProcessor
 <p>
-This plugin attempts to bridge the starling.events.TouchEvent API to the flash.events.TouchEvent API. Developers can listen for:
+This plugin bridges the starling.events.TouchEvent API to the flash.events.TouchEvent API.
+</p>
+<p>
+Developers can listen for the following flash events and conduct touch event listening as done normally in the native flash API.
 </p>
 ```actionscript
 flash.events.TouchEvent.TOUCH_BEGIN
