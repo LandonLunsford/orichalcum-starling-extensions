@@ -13,7 +13,7 @@ The PluggableTouchProcessor is an extensible version of starling.events.TouchPro
 Usage:
 ```actionscript
 starling.touchProcessor = new PluggableTouchProcessor(starling.stage, new <ITouchProcessor>[
-	...add your custom touch processors here...
+	/* Add your custom touch processors here */
 ]);
 ```
 ### NativeTouchProcessor
