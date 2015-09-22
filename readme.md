@@ -12,12 +12,9 @@ The PluggableTouchProcessor is an extensible version of starling.events.TouchPro
 </p>
 Usage:
 ```actionscript
-starling.touchProcessor = new PluggableTouchProcessor(
-	starling.stage,
-	new <ITouchProcessor>[
-		...add your custom touch processors here...
-	]
-);
+starling.touchProcessor = new PluggableTouchProcessor(starling.stage, new <ITouchProcessor>[
+	...add your custom touch processors here...
+]);
 ```
 ### NativeTouchProcessor
 <p>
@@ -25,12 +22,12 @@ Plugin for the PluggableTouchProcessor which maps starling TouchEvents to Native
 </p>
 Usage:
 ```actionscript
-starling.touchProcessor = new PluggableTouchProcessor(
-	starling.stage,
-	new <ITouchProcessor>[
-		new NativeTouchProcessor()
-	]
-);
+starling.touchProcessor = new PluggableTouchProcessor(starling.stage, new <ITouchProcessor>[
+	new NativeTouchProcessor()
+]);
 ```
-### Support package - Contains various Starling utility methods
+### Support Package
+<p>
+This package contains Starling utility methods to support the enclosed extensions
+</p>
 - DisplayObjects: Contains utility methods for handling starling.display.DisplayObject instances
