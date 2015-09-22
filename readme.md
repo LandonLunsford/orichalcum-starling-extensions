@@ -18,8 +18,17 @@ starling.touchProcessor = new PluggableTouchProcessor(starling.stage, new <ITouc
 ```
 ### NativeTouchProcessor
 <p>
-Plugin for the PluggableTouchProcessor which maps starling TouchEvents to NativeTouchEvents in an attempt to make the starling Touch API more accessible to regular AIR developers
+This plugin attempts to bridge the starling.events.TouchEvent API to the flash.events.TouchEvent API. Developers can listen for:
 </p>
+-flash.events.TouchEvent.TOUCH_BEGIN
+-flash.events.TouchEvent.TOUCH_END
+-flash.events.TouchEvent.TOUCH_TAP
+-flash.events.TouchEvent.TOUCH_MOVE
+-flash.events.TouchEvent.TOUCH_OVER
+-flash.events.TouchEvent.TOUCH_OUT
+
+The only catch is that due to Starling Framework limitations a new touch event class must be used in order to plug into the Starling Framework event dispatcher API - this is starling.events.NativeTouchEvent
+
 Usage:
 ```actionscript
 starling.touchProcessor = new PluggableTouchProcessor(starling.stage, new <ITouchProcessor>[
