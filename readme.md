@@ -8,16 +8,39 @@ This library contains various extensions for Starling Framework.
 ## Extensions
 ### PluggableTouchProcessor
 <p>
-An extensible version of starling.events.TouchProcessor
+The PluggableTouchProcessor is an extensible version of starling.events.TouchProcessor and allows the user to add one or more custom touch processors on top of the starling base TouchProcessor implementation.
 </p>
 Usage:
 ```actionscript
-starling.touchProcessor = new PluggableTouchProcessor(
-	starling.stage,
-	new <ITouchProcessor>[
-		...add your custom touch processors here...
-	]
-);
+starling.touchProcessor = new PluggableTouchProcessor(starling.stage, new <ITouchProcessor>[
+	/* Add your custom touch processors here */
+]);
 ```
-### NativeTouchProcessor - Plugin for PluggableTouchProcessor which maps starling TouchEvents to NativeTouchEvents in an attempt to make the starling Touch API more accessible to regular AIR developers
-### Support package - Contains various Starling utility methods
+### NativeTouchProcessor
+<p>
+This plugin bridges the starling.events.TouchEvent API to the flash.events.TouchEvent API.
+</p>
+<p>
+Developers can listen for the following flash events and conduct touch event listening as done normally in the native flash API.
+</p>
+```actionscript
+flash.events.TouchEvent.TOUCH_BEGIN
+flash.events.TouchEvent.TOUCH_END
+flash.events.TouchEvent.TOUCH_TAP
+flash.events.TouchEvent.TOUCH_MOVE
+flash.events.TouchEvent.TOUCH_OVER
+flash.events.TouchEvent.TOUCH_OUT
+```
+The only catch is that due to Starling Framework limitations a new touch event class must be used in order to plug into the Starling Framework event dispatcher API - this is starling.events.NativeTouchEvent
+
+Usage:
+```actionscript
+starling.touchProcessor = new PluggableTouchProcessor(starling.stage, new <ITouchProcessor>[
+	new NativeTouchProcessor()
+]);
+```
+### Support Package
+<p>
+This package contains Starling utility methods to support the enclosed extensions
+</p>
+- DisplayObjects: Contains utility methods for handling starling.display.DisplayObject instances
